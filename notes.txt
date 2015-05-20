@@ -1,0 +1,19 @@
+Bubble order ->
+
+1. FriendsNewController
+2. FriendsNewRoute
+3. FriendsRoute
+4. ApplicationRoute
+
+
+
+
+Dudas:
+
+
+Page 34
+
+One important item to mention is that if we pass an instance of a friend to link-to, then the
+model hook in the Friends Show Route won’t be called. If we want the hook to be called, instead
+of doing {{#link-to 'friends.show' friend}}, we’ll have to do {{#link-to 'friends.show'
+friend.id}}.
