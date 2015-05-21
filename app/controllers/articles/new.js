@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   isValid: Ember.computed(
     'model.description',
     function () {
-      return !Ember.isEmpty(this.get('model.description'))
+      return !Ember.isEmpty(this.get('model.description'));
     }
   ),
   actions: {
