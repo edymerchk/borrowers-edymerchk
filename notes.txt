@@ -17,3 +17,20 @@ One important item to mention is that if we pass an instance of a friend to link
 model hook in the Friends Show Route won’t be called. If we want the hook to be called, instead
 of doing {{#link-to 'friends.show' friend}}, we’ll have to do {{#link-to 'friends.show'
 friend.id}}.
+
+
+Page 74
+
+By default, observers are not set up until
+the function where they are specified is consumed. We use Ember.on(‘init’, …), which will call the
+function as soon as the controller is initialized. This helps us activate the observer.
+
+
+Page 75
+
+this.set('a', 2);
+this.set('b', 3);
+
+we use Ember.run.once⁶⁴, which guarantees that the function passed will
+be called only once during the current running loop. If we set a and b consecutively, the observer
+functions is still called twice but the expensive operations just once.
