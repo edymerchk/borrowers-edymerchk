@@ -1,10 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
+  queryParams: {
+    showReturned: {
+      refreshModel: true
+    }
+  },
+  model: function(params) {
     var articles =  this.modelFor('friends/show').get('articles');
     if (articles.get('isFulfilled')) {
       articles.reload();
+    }
+
+    if(!params.showReturned){
+      return articles.filterBy('state', 'borrowed');
     }
     return articles;
   },
