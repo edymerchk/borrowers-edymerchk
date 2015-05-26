@@ -6,7 +6,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var app = new EmberApp({
   // broccoli-asset-rev is now an ember-cli addon.
   fingerprint: {
-    prepend: 'http://d1vlpskbbx1p70.cloudfront.net/'
+    prepend: 'https://d1vlpskbbx1p70.cloudfront.net/'
   },
   minifyCSS: {
     enabled: true,
